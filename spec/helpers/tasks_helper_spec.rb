@@ -1,15 +1,16 @@
+# encoding: utf-8
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TasksHelper. For example:
-#
-# describe TasksHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe TasksHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "completed" do
+    it "returns a check mark if the task is completed" do
+      task = mock_model("Task", completed: true)
+      completed(task).should == "✔"
+    end
+
+    it "returns a cross if the task is completed" do
+      task = mock_model("Task", completed: false)
+      completed(task).should == "✖"
+    end
+  end
 end
