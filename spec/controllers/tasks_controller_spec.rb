@@ -74,9 +74,9 @@ describe TasksController do
         assigns(:task).should be_persisted
       end
 
-      it "redirects to the created task" do
+      it "redirects to the root path" do
         post :create, :task => valid_attributes
-        response.should redirect_to(Task.last)
+        response.should redirect_to(root_path)
       end
     end
 
@@ -115,10 +115,10 @@ describe TasksController do
         assigns(:task).should eq(task)
       end
 
-      it "redirects to the task" do
+      it "redirects to the root path" do
         task = Task.create! valid_attributes
         put :update, :id => task.id, :task => valid_attributes
-        response.should redirect_to(task)
+        response.should redirect_to(root_path)
       end
     end
 
@@ -149,10 +149,10 @@ describe TasksController do
       }.to change(Task, :count).by(-1)
     end
 
-    it "redirects to the tasks list" do
+    it "redirects to the root path" do
       task = Task.create! valid_attributes
       delete :destroy, :id => task.id
-      response.should redirect_to(tasks_url)
+      response.should redirect_to(root_path)
     end
   end
 
