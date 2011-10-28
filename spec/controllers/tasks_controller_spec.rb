@@ -37,14 +37,6 @@ describe TasksController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested task as @task" do
-      task = Task.create! valid_attributes
-      get :show, :id => task.id
-      assigns(:task).should eq(task)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new task as @task" do
       get :new
