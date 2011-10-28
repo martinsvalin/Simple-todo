@@ -148,4 +148,17 @@ describe TasksController do
     end
   end
 
+  describe "PUT toggle" do
+    it "marks an incomplete task as completed" do
+      task = Task.create! valid_attributes.merge(completed: false)
+      Task.any_instance.should_receive(:toggle).with(:completed)
+      put :toggle, id: task.id
+    end
+
+    it "redirects to the root path" do
+      task = Task.create! valid_attributes
+      put :toggle, id: task.id
+      response.should redirect_to(root_path)
+    end
+  end
 end

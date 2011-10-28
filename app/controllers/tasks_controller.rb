@@ -69,4 +69,10 @@ class TasksController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def toggle
+    task = Task.find(params[:id])
+    message = task.toggle_and_give_message
+    redirect_to root_path, :notice => message
+  end
 end

@@ -35,5 +35,8 @@ describe TasksController do
       delete("/tasks/1").should route_to("tasks#destroy", :id => "1")
     end
 
+    it "routes to #toggle" do
+      put('/tasks/1/toggle').should route_to("tasks#toggle", id: "1")
+    end
   end
 end
