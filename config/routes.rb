@@ -1,4 +1,4 @@
 SimpleTodo::Application.routes.draw do
   root to: "tasks#index"
-  resources :tasks
+  resources :tasks, :except => [:show]
  end
