@@ -35,6 +35,13 @@ describe TasksController do
       get :index
       assigns(:tasks).should eq([task])
     end
+
+    it "sorts tasks by descending creation date" do
+      old_task = Task.create! valid_attributes.merge(created_at: 1.day.ago)
+      new_task = Task.create! valid_attributes.merge(created_at: Time.now)
+      get :index
+      assigns(:tasks).should eq([new_task, old_task])
+    end
   end
 
   describe "GET new" do
