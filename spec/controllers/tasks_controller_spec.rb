@@ -24,7 +24,9 @@ describe TasksController do
   # Task. As you add validations to Task, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :name => "Bruce Wayne"
+    }
   end
 
   describe "GET index" do
