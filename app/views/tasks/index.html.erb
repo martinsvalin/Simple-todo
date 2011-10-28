@@ -19,6 +19,7 @@
       </td>
       <td>
         <span class="time hidden"><%= task.created_at.utc.iso8601 %></span>
+        <%= distance_of_time_in_words task.created_at, Time.now %> ago
       </td>
       <td class="button"><%= link_to 'Toggle', toggle_task_path(task), method: :put, class: 'btn primary' %></td>
       <td class="button"><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete, class: 'btn danger' %></td>
