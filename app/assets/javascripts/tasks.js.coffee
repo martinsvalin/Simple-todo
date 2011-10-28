@@ -1,1 +1,1 @@
-$ -> new List 'task-list', valueNames: ['name']
+$ -> new List 'task-list', valueNames: ['name', 'time']
