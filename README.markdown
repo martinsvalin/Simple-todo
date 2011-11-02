@@ -20,5 +20,6 @@ I will be adding:
 -  Acceptance testing with Capybara
 -  Unit testing with Rspec
 -  Something to the README
+-  Adding something completely different
 
 The master branch is tagged at appropriate places, to allow me to recover from the embarrassement of drawing a blank in the middle of coding. I create a local branch before class and clear it out entirely (except for .rvmrc)
